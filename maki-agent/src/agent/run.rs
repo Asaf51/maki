@@ -342,10 +342,7 @@ impl<'h> Agent<'h> {
         self.finish(result)
     }
 
-    fn finish(
-        &mut self,
-        result: Result<DoneReason, AgentError>,
-    ) -> Result<DoneReason, AgentError> {
+    fn finish(&mut self, result: Result<DoneReason, AgentError>) -> Result<DoneReason, AgentError> {
         let reason = match result {
             Ok(reason) => reason,
             Err(AgentError::Cancelled) => {
